@@ -13,7 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../css/styleSheet.css" />
-
+<script>
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+</script>
 </head>
 
 <body>
@@ -65,7 +72,7 @@
                     <p for="IName">Contact Number :</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" placeholder="Enter Your Contact Number">
+                    <input type="text" maxlength="10" onkeypress="return isNumberKey(event)" placeholder="Enter Your Contact Number">
                 </div>
             </div>
 
@@ -74,7 +81,7 @@
                     <p for="IName">Email ID :&nbsp;&nbsp;&nbsp;</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" placeholder="Enter Your Email ID">
+                    <input type="email" placeholder="Enter Your Email ID">
                 </div>
 
             </div>
